@@ -83,7 +83,11 @@ export function ActivityBuilderLayout() {
               onClick={toggleSidebar}
               aria-label="Toggle sidebar"
             >
-              {isSidebarOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {isSidebarOpen ? (
+                <X className={cn("w-5 h-5", isDark ? "text-white" : "text-gray-900")} />
+              ) : (
+                <Menu className={cn("w-5 h-5", isDark ? "text-white" : "text-gray-900")} />
+              )}
             </Button>
             <div>
               <h1 className={cn("font-semibold", isDark ? "text-white" : "text-gray-900")}>
@@ -108,7 +112,11 @@ export function ActivityBuilderLayout() {
               onClick={toggleDark}
               aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
             >
-              {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+              {isDark ? (
+                <Sun className="w-5 h-5 text-yellow-400" />
+              ) : (
+                <Moon className="w-5 h-5 text-gray-700" />
+              )}
             </Button>
           </div>
         </header>
